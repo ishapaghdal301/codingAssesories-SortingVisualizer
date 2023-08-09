@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_file/sorts.css">
+    <link rel="stylesheet" href="css_file/home.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Bubble Sort</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-dark bg-black fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">COADING ACCESSORIES</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end bg-black text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="selectionsort.html">SELECTION SORT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="bubblesort.html">BUBBLE SORT</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="quick_sort.html">QUICK SORT</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="insertionsort.html">INSERTION SORT</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="sort_area">
+    <h1>Bubble Sort</h1>
+    <div class="slider_container">
+      Elements:
+      <span id="no_of_ele"></span><br>
+      <input type="range" value="100" min="10" max="380" step="5" name="item-num" id="slider" oninput="init()">
+    </div>
+    <div id="container"></div>
+
+    <hr>
+    <div class="buttons">
+      <button type="button" id="shuffle_btn" class="btn btn-secondary" onClick="init()">Shuffle</button>
+      <button type="button" id="play_btn" class="btn btn-secondary" onClick="play()">Sort The Array</button>
+    </div>
+  </div>
+
+    <div class="footer">
+      <div class="desc">
+        <h1>DESCRIPTION</h1>
+        <div class="desc_content">
+          Bubble Sort is an iterative sorting algorithm that imitates the movement of bubbles in sparkling water. The bubbles represents the elements of the data structure.
+<br><br>
+The bigger bubbles reach the top faster than smaller bubbles, and this algorithm works in the same way. It iterates through the data structure and for each cycle compares the current element with the next one, swapping them if they are in the wrong order.
+<br><br>
+It's a simple algorithm to implement, but not much efficient: on average, quadratic sorting algorithms with the same time complexity such as Selection Sort or Insertion Sort perform better.
+It has several variants to improve its performances, such as Shaker Sort, Odd Even Sort and Comb Sort.
+        </div>
+    </div>
+
+    <div class="comp">
+      <h1>COMPLEXITY</h1>
+      <table>
+        <tr>
+          <th>Average Complexity</th>
+          <td>O(n<sup>2</sup>)</td>
+        </tr>
+        <tr>
+          <th>Best Casey</th>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <th>Worst Case</th>
+          <td>O(n<sup>2</sup>)</td>
+        </tr>
+        <tr>
+          <th>Space Complexity</th>
+          <td>O(1)</td>
+        </tr>
+      </table>
+    </div>
+
+    <code id="code" class="c hljs">
+      <h1>IMPLEMENTATIONS</h1>
+      <div class="code_container">
+          <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bubble_sort</span><span class="hljs-params">(<span class="hljs-keyword">long</span> arr[], <span class="hljs-keyword">long</span> n)</span> </span>{
+            <span class="hljs-keyword">long</span> c, d, t;
+          
+            <span class="hljs-keyword">for</span> (c = <span class="hljs-number">0</span> ; c &lt; n - <span class="hljs-number">1</span>; c++) {
+              <span class="hljs-keyword">for</span> (d = <span class="hljs-number">0</span> ; d &lt; n - c - <span class="hljs-number">1</span>; d++) {
+                <span class="hljs-keyword">if</span> (arr[d] &gt; arr[d+<span class="hljs-number">1</span>]) {
+                  t = arr[d];
+                  arr[d] = arr[d+<span class="hljs-number">1</span>];
+                  arr[d+<span class="hljs-number">1</span>] = t;
+                }
+              }
+            }
+          }
+          </div>
+    </code>
+    </div>
+
+    <script src="Js_file/bubblesort.js"></script>
+</body>
+</html>

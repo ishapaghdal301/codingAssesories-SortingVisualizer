@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css_file/sorts.css">
+    <link rel="stylesheet" href="css_file/home.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>Insertion Sort</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-dark bg-black fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">COADING ACCESSORIES</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end bg-black text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+        
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="selectionsort.html">SELECTION SORT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="bubblesort.html">BUBBLE SORT</a>
+            </li>
+            <li class="nav-item">
+               <a class="nav-link" href="quick_sort.html">QUICK SORT</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link active" href="insertionsort.html">INSERTION SORT</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="sort_area">
+    <h1>Insertion Sort</h1>
+    <div class="slider_container">
+      Elements:
+      <span id="no_of_ele"></span><br>
+      <input type="range" value="100" min="10" max="380" step="5" name="item-num" id="slider" oninput="init()">
+    </div>
+    <div id="container"></div>
+
+    <hr>
+    <div class="buttons">
+      <button type="button" id="shuffle_btn" class="btn btn-secondary" onClick="init()">Shuffle</button>
+      <button type="button" id="play_btn" class="btn btn-secondary" onClick="play()">Sort The Array</button>
+    </div>
+    </div>
+
+    <div class="footer">
+      <div class="desc">
+        <h1>DESCRIPTION</h1>
+        <div class="desc_content">
+          Insertion sort is a simple sorting algorithm that builds the final sorted array one item at a time. It's less performant than advanced sorting algorithms, but it can still have some advantages: it's really easy to implement and it's efficient on small data structures almost sorted.
+
+The algorithm divides the data structure in two sublists: a sorted one, and one still to sort. Initially, the sorted sublist is made up of just one element and it gets progressively filled. For every iteration, the algorithm picks an element on the unsorted sublist and inserts it at the right place in the sorted sublist. It's available in several variants such as Gnome Sort.
+        </div>
+    </div>
+
+    <div class="comp">
+      <h1>COMPLEXITY</h1>
+      <table>
+        <tr>
+          <th>Average Complexity</th>
+          <td>O(n<sup>2</sup>)</td>
+        </tr>
+        <tr>
+          <th>Best Casey</th>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <th>Worst Case</th>
+          <td>O(n<sup>2</sup>)</td>
+        </tr>
+        <tr>
+          <th>Space Complexity</th>
+          <td>O(1)</td>
+        </tr>
+      </table>
+    </div>
+
+    <code id="code" class="c hljs">
+      <h1>IMPLEMENTATIONS</h1>
+      <div class="code_container">
+          <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insertionSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> arr[], <span class="hljs-keyword">int</span> n)</span>
+          </span>{
+              <span class="hljs-keyword">int</span> i, key, j;
+              <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt; n; i++) {
+                  key = arr[i];
+                  j = i - <span class="hljs-number">1</span>;
+          
+                  <span class="hljs-keyword">while</span> (j &gt;= <span class="hljs-number">0</span> &amp;&amp; arr[j] &gt; key) {
+                      arr[j + <span class="hljs-number">1</span>] = arr[j];
+                      j = j - <span class="hljs-number">1</span>;
+                  }
+                  arr[j + <span class="hljs-number">1</span>] = key;
+              }
+          }
+      </div>
+    </code>
+    </div>
+
+    <script src="Js_file/insertionsort.js"></script>
+</body>
+</html>

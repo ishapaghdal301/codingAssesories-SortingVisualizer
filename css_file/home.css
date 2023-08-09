@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Merriweather+Sans&display=swap');
+.first_page{
+    background-image: url(../bg/photo_2022-10-27_19-03-23.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.container-fluid {
+    background-color: black;
+}
+
+.navbar-toggler {
+    border-color: #d17f3f;
+    /* background-color: #d17f3f; */
+    border-radius: 10px;
+}
+
+.navbar-toggler:hover,.nav-item:hover{
+    background-color: #e18844dd;
+}
+
+
+
+.content {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat";
+  font-size: 35px;
+  font-weight: 1000;
+  color: #fff;
+  width: 100%;
+  height: 100vh;
+  /* background-color: #222; */
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .content,
+body .content {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: t
+  ranslateX(-50%), translateY(-50%);
+}
+
+.content .random .nbr{
+  /* font-weight: 20; */
+  font-size: 60px;
+}
+
+html .content span,
+body .content span {
+  width: 30px;
+  display: inline-block;
+  font-size: 60px;
+}
+
+.second_page{
+  background-color: black;
+  /* color: aliceblue; */
+}
+
+.second_page h3{
+  padding: 10px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+}
+
+
+.second_page p{
+  /* letter-spacing: -2px; */
+  font-family: 'Merriweather Sans', sans-serif;
+  padding-left:10%;
+  padding-right: 10%;
+  color: #ffffff;
+  font-size: 1.2em;
+}
+
+.second_page .para_container{
+  padding-bottom: 20px;
+}
+
